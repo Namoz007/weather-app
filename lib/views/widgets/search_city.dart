@@ -9,6 +9,20 @@ class SearchViewDelegate extends SearchDelegate<String> {
 
   SearchViewDelegate(this.weather,this.data);
 
+
+  @override
+  TextStyle? get searchFieldStyle => TextStyle(color: Colors.white);
+
+  @override
+  ThemeData appBarTheme(BuildContext context) {
+    return ThemeData(
+      appBarTheme: AppBarTheme(
+        color: Color(0xFF2E335A),
+
+      )
+    );
+  }
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -16,7 +30,7 @@ class SearchViewDelegate extends SearchDelegate<String> {
           onPressed: () {
             query = '';
           },
-          icon: const Icon(Icons.clear))
+          icon: const Icon(Icons.clear,color: Colors.white,))
     ];
   }
 
@@ -26,7 +40,7 @@ class SearchViewDelegate extends SearchDelegate<String> {
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: const Icon(Icons.arrow_back));
+        icon: const Icon(Icons.arrow_back,color: Colors.white,));
   }
 
   @override
